@@ -1,0 +1,12 @@
+<h1>Connectez-vous</h1>
+<% if (locals.message) { %>
+    <strong><%= message %></strong>
+<% } %>
+
+<form method="post">
+    <label for="email">Adresse Email</label>
+    <input type="email" name="email" id="email">
+    <label for="pwd">Mot de passe</label>
+    <input type="password" name="pwd" id="pwd">
+    <button>Se connecter</button>
+</form>

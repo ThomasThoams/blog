@@ -1,0 +1,25 @@
+<a class="back" href="/">Retour</a>
+<section class="article-detail">
+    <h1><%= post.title %></h1>
+    <p> <%= post.description %></p>
+</section>
+<section class="comment-article">
+
+    <ul>
+        <% for(const comment of post.comments) { %>
+            <li>
+                <h3><%= comment.pseudo %></h3>
+                <p><%= comment.comment %></p>
+                <p><%= new Date(comment.date).toLocaleDateString("FR-fr")%></p>
+            </li>
+        <% } %>
+    </ul>
+
+</section>
+<form action="/add_comment/<%= post.id %>" method="post">
+    <label>Pseudo</label>
+    <input type="text" name="pseudo">
+    <label>Commentaire</label>
+    <textarea name="content"></textarea>
+    <input type="submit" name="Enregistrer">
+</form>

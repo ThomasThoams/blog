@@ -1,0 +1,15 @@
+<h1>Home</h1>
+<p>Bienvenue sur mon blog, vous trouverez ici tous mes articles sur la Laponie !</p>
+
+<ul class="home-list">
+    <% for (let i = 0; i < posts.length; i++){ %>
+        <li>
+            <a href="/article/<%= posts[i]._id %>"><%= posts[i].title.toUpperCase() %></a>
+            <% if(posts[i].images[0]){ %>
+            <img src="<%= posts[i].images[0].src %>" alt="<%= posts[i].images[0].alt %>" width="20%">
+            <% } %>
+            <p><%= posts[i].description.substring(0,30) %>...</p>
+            <p><%= posts[i].date.toLocaleDateString('FR-fr') %></p>
+        </li>
+    <% } %>
+</ul>
